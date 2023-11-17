@@ -1,0 +1,15 @@
+/* App.css */
+.app {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sold {
+  border-color: red;
+}

@@ -1,0 +1,49 @@
+/* Navbar.css */
+@import "@fortawesome/fontawesome-svg-core/styles.css";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #707070;
+  color: white;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  margin: 0 10px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.left-icons,
+.right-icons {
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar-left {
+    margin-bottom: 10px;
+  }
+
+  .navbar-right {
+    margin-top: 10px;
+  }
+}
