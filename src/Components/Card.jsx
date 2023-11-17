@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.css";
 
-const Card = ({ id, img, name, price, onAddToCart }) => {
+const Card = ({ img, name, price, onAddToCart }) => {
   return (
     <div className="card">
       <img src={img} alt={name} />

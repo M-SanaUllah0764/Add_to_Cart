@@ -48,8 +48,15 @@ export const ShoeProvider = ({ children }) => {
   const [shoes, setShoes] = useState(initialShoes);
   const [cart, setCart] = useState([]);
   const [soldItems, setSoldItems] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const getShoes = () => shoes;
+  const getShoes = () => {
+    // Filter shoes based on search query
+    const filteredShoes = shoes.filter((shoe) =>
+      shoe.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    return filteredShoes;
+  };
 
   const handleChangeAllShoes = () => {
     const newShoes = [
@@ -124,6 +131,7 @@ export const ShoeProvider = ({ children }) => {
         markAsSold,
         cart,
         soldItems,
+        setSearchQuery,
       }}
     >
       {children}

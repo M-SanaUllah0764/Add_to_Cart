@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "./Components/Navbar";
 import Card from "./Components/Card";
 import { useShoeContext } from "./Components/context/ShoeContext";
@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div>
-      <Navbar cartItems={cart.lenght} />
+      <Navbar cartItems={cart.length} />
       <div className="cards">
         {getShoes().map((shoe) => (
           <Card

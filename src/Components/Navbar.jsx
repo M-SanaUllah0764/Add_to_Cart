@@ -11,11 +11,24 @@ import CartModal from "./CartModal";
 import { useShoeContext } from "./context/ShoeContext";
 
 const Navbar = () => {
-  const { cart } = useShoeContext();
+  const { cart, setSearchQuery, getShoes } = useShoeContext();
   const [isCartModalOpen, setCartModalOpen] = useState(false);
+  const [isSearchVisible, setSearchVisible] = useState(false);
 
   const toggleCartModal = () => {
     setCartModalOpen(!isCartModalOpen);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+
+    // if (event.target.value.trim() !== "") {
+    //   setSearchResults(getShoes());
+    // }
+  };
+
+  const handleSearchIconClick = () => {
+    setSearchVisible(!isSearchVisible);
   };
 
   return (
@@ -25,7 +38,22 @@ const Navbar = () => {
       </div>
       <div className="logo">LOGO</div>
       <div className="navbar-right">
-        <FontAwesomeIcon icon={faSearch} className="right-icons" />
+        <div className="navbar-center">
+          {isSearchVisible && (
+            <div className="search-container">
+              <input
+                type="text"
+                placeholder="Search..."
+                onChange={handleSearchChange}
+              />
+            </div>
+          )}
+        </div>
+        <FontAwesomeIcon
+          icon={faSearch}
+          className="right-icons"
+          onClick={handleSearchIconClick}
+        />
         <FontAwesomeIcon icon={faUser} className="right-icons" />
         <div className="cart-icon" onClick={toggleCartModal}>
           <FontAwesomeIcon icon={faShoppingCart} className="right-icons" />
