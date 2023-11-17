@@ -21,10 +21,6 @@ const Navbar = () => {
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
-
-    // if (event.target.value.trim() !== "") {
-    //   setSearchResults(getShoes());
-    // }
   };
 
   const handleSearchIconClick = () => {
