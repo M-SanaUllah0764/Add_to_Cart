@@ -16,15 +16,12 @@
 }
 
 .badge {
-  background-color: red;
-  color: white;
+  background-color: #605a5a;
   padding: 5px;
   border-radius: 5px;
 }
 
 button {
-  background-color: #4caf50;
-  color: white;
   border: none;
   padding: 8px;
   cursor: pointer;

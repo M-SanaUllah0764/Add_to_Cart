@@ -1,19 +1,19 @@
 import React from "react";
 import { useShoeContext } from "./context/ShoeContext";
-
+import "./SoldItems.css";
 const SoldItems = () => {
   const { soldItems } = useShoeContext();
 
   return (
-    <div>
+    <div className="sold-items-container">
       <h2>Sold Items</h2>
-      <ul>
+      <ul className="sold-item">
         {soldItems.map((item) => (
           <li key={item.id}>
             <img src={item.img} alt={item.name} className="cart-item-image" />
-            <div className="cart-item-details">
+            <div>
               <h3>{item.name}</h3>
-              <p>Price: {item.price}</p>
+              <p className="sold-item-price">Price: {item.price}</p>
             </div>
           </li>
         ))}

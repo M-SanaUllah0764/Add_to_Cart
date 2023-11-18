@@ -6,8 +6,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #707070;
+  background-color: #24262b;
   color: white;
+  box-shadow: 0 -20px 50px #000;
 }
 
 .navbar-left {
@@ -76,34 +77,4 @@ input {
   border: none;
   border-radius: 4px;
   margin-right: 1rem;
-}
-
-.search-results {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  max-height: 200px;
-  overflow-y: auto;
-  z-index: 1;
-}
-
-.search-results ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.search-results li {
-  padding: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.search-results li:hover {
-  background-color: #f2f2f2;
 }

@@ -1,0 +1,24 @@
+.sold-items-container {
+  margin: 20px;
+  color: #888;
+}
+
+/* Style for each sold item */
+.sold-item {
+  display: flex;
+  justify-content: center;
+}
+
+.sold-item-image {
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sold-item li {
+  margin: 12px;
+  border-radius: 5px;
+  border: 1px solid rgb(80, 77, 77);
+}

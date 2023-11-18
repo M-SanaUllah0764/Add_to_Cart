@@ -6,7 +6,8 @@ import "./App.css";
 import SoldItems from "./Components/SoldItems";
 
 const App = () => {
-  const { getShoes, handleChangeAllShoes, addToCart, cart } = useShoeContext();
+  const { getShoes, handleChangeAllShoes, addToCart, cart, soldItems } =
+    useShoeContext();
 
   const handleAddToCart = (shoe) => {
     addToCart(shoe);
@@ -24,8 +25,10 @@ const App = () => {
           />
         ))}
       </div>
-      <SoldItems />
-      <button onClick={handleChangeAllShoes}>Change All Shoes</button>
+      <div className="center">
+        {soldItems.length > 0 && <SoldItems />}
+        <button onClick={handleChangeAllShoes}>Change All Shoes</button>
+      </div>
     </div>
   );
 };

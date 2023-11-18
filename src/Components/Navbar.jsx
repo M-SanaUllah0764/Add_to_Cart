@@ -9,11 +9,12 @@ import {
 import "./Navbar.css";
 import CartModal from "./CartModal";
 import { useShoeContext } from "./context/ShoeContext";
-
+import UserProfileModal from "./UserProfileModal";
 const Navbar = () => {
-  const { cart, setSearchQuery, getShoes } = useShoeContext();
+  const { cart, setSearchQuery } = useShoeContext();
   const [isCartModalOpen, setCartModalOpen] = useState(false);
   const [isSearchVisible, setSearchVisible] = useState(false);
+  const [isProfileModalOpen, setProfileModalOpen] = useState(false);
 
   const toggleCartModal = () => {
     setCartModalOpen(!isCartModalOpen);
@@ -25,6 +26,9 @@ const Navbar = () => {
 
   const handleSearchIconClick = () => {
     setSearchVisible(!isSearchVisible);
+  };
+  const toggleProfileModal = () => {
+    setProfileModalOpen(!isProfileModalOpen);
   };
 
   return (
@@ -50,13 +54,21 @@ const Navbar = () => {
           className="right-icons"
           onClick={handleSearchIconClick}
         />
-        <FontAwesomeIcon icon={faUser} className="right-icons" />
+        <FontAwesomeIcon
+          icon={faUser}
+          className="right-icons"
+          onClick={toggleProfileModal}
+        />
         <div className="cart-icon" onClick={toggleCartModal}>
           <FontAwesomeIcon icon={faShoppingCart} className="right-icons" />
           {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
         </div>
       </div>
       <CartModal isOpen={isCartModalOpen} onClose={toggleCartModal} />
+      <UserProfileModal
+        isOpen={isProfileModalOpen}
+        onClose={toggleProfileModal}
+      />
     </nav>
   );
 };
